@@ -1,0 +1,44 @@
+<openerp>
+    <data>
+        <record id="tree_res_partner_document_type" model="ir.ui.view">
+            <field name="model">res.partner.document.type</field>
+            <field name="type">tree</field>
+            <field type="xml" name="arch">
+                <tree string="Partner document">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="test_in" />
+                </tree>
+            </field>
+        </record>
+        <record id="form_res_partner_document_type" model="ir.ui.view">
+            <field name="model">res.partner.document.type</field>
+            <field name="type">form</field>
+            <field type="xml" name="arch">
+                <form string="Partner document">
+                    <sheet>
+			<div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-check">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;active&quot;}"/>
+                            </button>
+                        </div>
+			<div>
+			    <h1><field name="name" placeholder="Name"/></h1>
+			    <field name="code" placeholder="code"/>
+			</div>
+                        <group>
+                            <field name="validator_re" />
+                            <field name="sub_re" />
+                            <field name="sub" />
+                            <field name="template_re" />
+                            <field name="template" />
+                            <field name="user_help" />
+                            <field name="test_in" />
+                            <field name="test_out" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

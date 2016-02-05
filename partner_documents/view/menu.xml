@@ -1,0 +1,18 @@
+<openerp>
+    <data>
+
+        <act_window
+            id="action_res_partner_document_type"
+            res_model="res.partner.document.type"
+            view_mode="tree,form"
+            name="Partner Document Types"
+        />
+
+        <menuitem
+            id="menu_res_partner_document_type"
+            parent="base.menu_config_address_book"
+            action="action_res_partner_document_type"
+        />
+
+    </data>
+</openerp>

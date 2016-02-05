@@ -1,0 +1,6 @@
+-
+  DNI yet exists. Now check the test_out function.
+-
+   !assert {model: res.partner.document.type, id: dni, string: Must return Cristian DNI}:
+           - test_out == u'25.095.454'
+
