@@ -17,7 +17,7 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends('document_type_id')
     def _get_document_value(self):
-        document_ids = self.document_ids.filter(
+        document_ids = self.document_ids.filtered(
             lambda d: d.document_type_id == self.document_type_id)
         if document_ids:
             return self.document_ids.value
@@ -26,7 +26,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def _set_document_value(self):
-        document_ids = self.document_ids.filter(
+        document_ids = self.document_ids.filtered(
             lambda d: d.document_type_id == self.document_type_id)
         if document_ids:
             self.document_ids.value = self.document_value
