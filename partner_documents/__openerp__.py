@@ -2,7 +2,7 @@
 {
     "name": "Partner documents",
     "version": "9.0.0.0.0",
-    "author": "Moldeo Interactive, Ing. Adhoc,Odoo Community Association (OCA)",
+    "author": "Moldeo Interactive,ADHOC SA,Odoo Community Association (OCA)",
     "complexity": "normal",
     "category": "Customer Relationship Management",
     "depends": [
