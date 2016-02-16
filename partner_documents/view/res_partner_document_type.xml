@@ -6,6 +6,7 @@
             <field type="xml" name="arch">
                 <tree string="Partner document">
                     <field name="name" />
+                    <field name="abbreviation" />
                     <field name="code" />
                     <field name="test_in" />
                 </tree>
@@ -23,8 +24,9 @@
                             </button>
                         </div>
                         <div>
-                            <h1><field name="name" placeholder="Name"/></h1>
-                            <field name="code" placeholder="code"/>
+                            <h1><field name="name" placeholder="Name..."/></h1>
+                            <field name="abbreviation" placeholder="Abbreviation..."/>
+                            <field name="code" placeholder="Code..."/>
                         </div>
                         <group>
                             <field name="validator_re" />

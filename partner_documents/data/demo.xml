@@ -3,7 +3,7 @@
     <data>
 	<record model='res.partner.document.type' id='dni'>
 	    <field name='name'>Documento Nacional de Identidad</field>
-	    <field name='code'>DNI</field>
+	    <field name='abbreviation'>DNI</field>
 	    <field name='validator_re'>^\d*$</field>
 	    <field name='sub_re'>(?&lt;=\d)(?=(\d\d\d)+(?!\d))</field>
 	    <field name='sub'>.</field>
@@ -13,7 +13,7 @@
 	</record>
 	<record model='res.partner.document.type' id='cuit'>
 	    <field name='name'>Código Único de Identificación Tributaria</field>
-	    <field name='code'>CUIT</field>
+	    <field name='abbreviation'>CUIT</field>
 	    <field name='validator_re'>^\d\d{6,10}\d$</field>
 	    <field name='template_re'>(\d\d)(\d*)(\d)</field>
 	    <field name='template'>{0}-{1}-{2}</field>

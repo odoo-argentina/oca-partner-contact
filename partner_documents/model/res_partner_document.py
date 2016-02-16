@@ -29,10 +29,13 @@ and formated in the right way.
 class ResPartnerDocumentType(models.Model):
     _name = 'res.partner.document.type'
     _description = 'Partner document types'
-    _rec_name = 'code'
+    _rec_name = 'abbreviation'
 
     name = fields.Char('Name', size=120, required=True)
-    code = fields.Char('Code', size=16, required=True)
+    abbreviation = fields.Char('Abbreviation', size=16, required=True)
+    code = fields.Char(
+        'Code',  size=16,
+        help='This code is to be used by differents localizations',)
     validator_re = fields.Char('Validator parser', help=_help_validator_re)
     sub_re = fields.Char('Replace parser', help=_help_sub_re)
     sub = fields.Char('Replace for')
@@ -54,7 +57,7 @@ class ResPartnerDocumentType(models.Model):
                 'warning': {
                     'title': _('Warning'),
                     'message': _('Invalid input for %s') %
-                    self.code}
+                    self.abbreviation}
             }
 
     @api.multi
@@ -177,4 +180,4 @@ class ResPartnerDocument(models.Model):
             if not document.document_type_id.is_valid(self.value):
                 raise UserError(_(
                     'Invalid document value %s for document type %s') % (
-                    document.value, document.document_type_id.code))
+                    document.value, document.document_type_id.abbreviation))
