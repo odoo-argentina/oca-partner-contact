@@ -17,15 +17,15 @@
             <field type="xml" name="arch">
                 <form string="Partner document">
                     <sheet>
-			<div class="oe_button_box" name="button_box">
+                        <div class="oe_button_box" name="button_box">
                             <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-check">
                                 <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;active&quot;}"/>
                             </button>
                         </div>
-			<div>
-			    <h1><field name="name" placeholder="Name"/></h1>
-			    <field name="code" placeholder="code"/>
-			</div>
+                        <div>
+                            <h1><field name="name" placeholder="Name"/></h1>
+                            <field name="code" placeholder="code"/>
+                        </div>
                         <group>
                             <field name="validator_re" />
                             <field name="sub_re" />

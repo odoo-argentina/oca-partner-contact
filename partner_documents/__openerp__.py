@@ -6,7 +6,7 @@
     "complexity": "normal",
     "category": "Customer Relationship Management",
     "depends": [
-        'base',
+        'base_setup',
     ],
     "demo": [
         'data/demo.xml',
@@ -19,7 +19,9 @@
         'view/res_partner.xml',
         'view/res_partner_document_type.xml',
         'view/menu.xml',
+        'res_config_view.xml',
         'security/ir.model.access.csv',
+        'security/security.xml',
     ],
     "js": [
     ],

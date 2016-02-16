@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''Define res.partner.document model'''
 from openerp import models, fields, api, _
-from openerp.exceptions import ValidationError
+from openerp.exceptions import ValidationError, UserError
 import re
 
 _help_validator_re = '''
@@ -29,6 +29,7 @@ and formated in the right way.
 class ResPartnerDocumentType(models.Model):
     _name = 'res.partner.document.type'
     _description = 'Partner document types'
+    _rec_name = 'code'
 
     name = fields.Char('Name', size=120, required=True)
     code = fields.Char('Code', size=16, required=True)
@@ -163,19 +164,17 @@ class ResPartnerDocumentType(models.Model):
 
 class ResPartnerDocument(models.Model):
     _name = 'res.partner.document'
+    _order = 'sequence'
 
     partner_id = fields.Many2one('res.partner', 'Partner')
     document_type_id = fields.Many2one('res.partner.document.type', 'Type')
     value = fields.Char('Value')
+    sequence = fields.Integer('Sequence', default=10)
 
     @api.constrains('document_type_id', 'value')
     def _check_document(self):
-        self.ensure_one()
-        if not self.document_type_id.is_valid(self.value):
-            return {
-                'warning': {
-                    'title': _('Warning'),
-                    'message': _('Invalid document %s') %
-                    self.document_type_id.code
-                }
-            }
+        for document in self:
+            if not document.document_type_id.is_valid(self.value):
+                raise UserError(_(
+                    'Invalid document value %s for document type %s') % (
+                    document.value, document.document_type_id.code))
