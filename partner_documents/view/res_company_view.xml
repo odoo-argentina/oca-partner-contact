@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_company_inherit_form">
+            <field name="name">res.company.form.inherit</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <label for="document_value" string="Main Document"/>
+                    <div class="address_format">
+                        <field name="document_type_id" options="{'no_open': True, 'no_create': True}" placeholder="Type" style="width: 45%"/>
+                        <field name="document_value" placeholder="Number" style="width: 53%"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

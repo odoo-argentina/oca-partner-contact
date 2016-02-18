@@ -18,6 +18,7 @@
     "data": [
         'view/res_partner.xml',
         'view/res_partner_document_type.xml',
+        'view/res_company_view.xml',
         'view/menu.xml',
         'res_config_view.xml',
         'security/ir.model.access.csv',
