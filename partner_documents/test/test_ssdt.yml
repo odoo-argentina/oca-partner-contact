@@ -1,0 +1,6 @@
+-
+  ssdt yet exists. Now check the test_out function.
+-
+   !assert {model: res.partner.document.type, id: ssdt, string: Must return Cristian CUIT}:
+           - test_out == u'23-25095454-9'
+

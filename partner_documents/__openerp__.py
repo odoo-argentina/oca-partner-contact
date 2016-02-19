@@ -12,8 +12,8 @@
         'data/demo.xml',
     ],
     "test": [
-        'test/test_dni.yml',
-        'test/test_cuit.yml',
+        'test/test_sdt.yml',
+        'test/test_ssdt.yml',
     ],
     "data": [
         'view/res_partner.xml',
