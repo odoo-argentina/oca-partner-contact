@@ -49,6 +49,7 @@ coverage.xml
 .project
 .pydevproject
 .settings/
+.ropeproject
 
 # Backup files
 *~
