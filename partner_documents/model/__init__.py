@@ -2,3 +2,4 @@
 
 from . import res_partner
 from . import res_partner_document
+from . import res_company

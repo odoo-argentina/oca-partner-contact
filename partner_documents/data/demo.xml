@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-	<record model='res.partner.document.type' id='dni'>
-	    <field name='name'>Documento Nacional de Identidad</field>
-	    <field name='code'>DNI</field>
+	<record model='res.partner.document.type' id='sdt'>
+	    <field name='name'>Sample Document Type</field>
+	    <field name='abbreviation'>SDT</field>
 	    <field name='validator_re'>^\d*$</field>
 	    <field name='sub_re'>(?&lt;=\d)(?=(\d\d\d)+(?!\d))</field>
 	    <field name='sub'>.</field>
@@ -11,9 +11,9 @@
 	    <field name='template'>{0}</field>
 	    <field name='test_in'>25095454</field>
 	</record>
-	<record model='res.partner.document.type' id='cuit'>
-	    <field name='name'>Código Único de Identificación Tributaria</field>
-	    <field name='code'>CUIT</field>
+	<record model='res.partner.document.type' id='ssdt'>
+	    <field name='name'>Second Sample Document Type</field>
+	    <field name='abbreviation'>SSDT</field>
 	    <field name='validator_re'>^\d\d{6,10}\d$</field>
 	    <field name='template_re'>(\d\d)(\d*)(\d)</field>
 	    <field name='template'>{0}-{1}-{2}</field>

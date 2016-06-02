@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 read_res_partner_document_type,access_res_partner_document_type,model_res_partner_document_type,,1,0,0,0
-crud_res_partner_document_type,access_res_partner_document_type,model_res_partner_document_type,base.group_sale_manager,1,1,1,1
+crud_res_partner_document_type,access_res_partner_document_type,model_res_partner_document_type,base.group_partner_manager,1,1,1,1
+read_res_partner_document,access_res_partner_document_type,model_res_partner_document,,1,0,0,0
+crud_res_partner_document,access_res_partner_document_type,model_res_partner_document,base.group_partner_manager,1,1,1,1

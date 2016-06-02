@@ -2,23 +2,29 @@
 <openerp>
     <data>
 
-        <record id="view_res_partner_filter" model="ir.ui.view">
-            <field name="name">partner_documents.view_partner_filter</field>
-            <field name="inherit_id" ref="base.view_res_partner_filter" />
-            <field name="model">res.partner</field>
-            <field type="xml" name="arch">
-                <data>
-                </data>
-            </field>
-        </record>
-
         <record id="view_partner_form" model="ir.ui.view">
             <field name="name">partner_documents.view_partner_form</field>
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="model">res.partner</field>
             <field type="xml" name="arch">
-                <data>
-                </data>
+                <field name="website" position="after">
+                    <label for="document_value" string="Main Document"/>
+                    <div class="address_format">
+                        <field name="document_type_id" options="{'no_open': True, 'no_create': True}" placeholder="Type" style="width: 45%"/>
+                        <field name="document_value" placeholder="Number" style="width: 53%"/>
+                    </div>
+                </field>
+                <page name="sales_purchases" position="after">
+                    <page name="partner_document" string="Partner Documents" groups="partner_documents.multiple_partner_documents">
+                        <field name="document_ids">
+                            <tree editable="top">
+                                <field name="sequence" widget="handle"/>
+                                <field name="document_type_id"/>
+                                <field name="value"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
             </field>
         </record>
 
